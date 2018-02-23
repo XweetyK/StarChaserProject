@@ -31,25 +31,25 @@ class Flecha extends FlxSprite
 		{
 			case 0:
 				//RIGHT----------
-				velocity.x = 200;
+				velocity.x = 240;
 				rRight = r.int(100,400);
 				this.x = 990;
 				this.y = rRight;
 			case 1:
 				//LEFT-----------
-				velocity.x = -200;
+				velocity.x = -240;
 				rLeft = r.int(200, 500);
 				this.x = 209;
 				this.y = rLeft;
 			case 2:
 				//DOWN-----------
-				velocity.y = 200;
+				velocity.y = 240;
 				rDown = r.int(100, 450);
 				this.x = rDown;
 				this.y = 410;
 			case 3:
 				//UP-------------
-				velocity.y = -200;
+				velocity.y = -240;
 				rUp = r.int(750, 1000);
 				this.x = rUp;
 				this.y = 209;

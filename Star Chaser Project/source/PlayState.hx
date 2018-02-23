@@ -109,7 +109,7 @@ class PlayState extends FlxState
 		
 		arrow = new FlxTypedGroup();
 		
-		timer = 100;
+		timer = 50;
 		timeTimed = 0;
 		wFlecha = 0;
 		r = new FlxRandom();
@@ -154,8 +154,6 @@ class PlayState extends FlxState
 		rightBar3.color = FlxColor.WHITE;
 		arrowCreator();
 		arrowMech();
-		trace(arrow.members.length);
-		
 	}
 	private function arrowMech ()
 	{
@@ -197,14 +195,14 @@ class PlayState extends FlxState
 						ratio.text = "Perfect";
 						score += 500;
 						arrow.remove(arrow.members[i], true);
-						combo += 1;
+						comboCount();
 					}
 					else
 					{
 						ratio.text = "Good";
 						score += 200;
 						arrow.remove(arrow.members[i], true);
-						combo += 1;
+						comboCount();
 					}
 				}
 				else
@@ -212,24 +210,24 @@ class PlayState extends FlxState
 					ratio.text = "Bad";
 					score += 100;
 					arrow.remove(arrow.members[i], true);
-					combo += 1;
+					comboCount();
 				}
 			}
-			if (FlxG.overlap(arrow.members[i], leftBar3) && FlxG.keys.justPressed.LEFT)
+			if (FlxG.overlap(arrow.members[i], leftBar3) && FlxG.keys.justPressed.LEFT && !FlxG.overlap(arrow.members[i], leftBar1))
 			{
 				if (FlxG.overlap(arrow.members[i], leftBar2) && FlxG.keys.justPressed.LEFT)
 				{
 					ratio.text = "Good";
 					score += 200;
 					arrow.remove(arrow.members[i], true);
-					combo += 1;
+					comboCount();
 				}
 				else
 				{
 					ratio.text = "Bad";
 					score += 100;
 					arrow.remove(arrow.members[i], true);
-					combo += 1;
+					comboCount();
 				}
 			}
 			//DOWN-----------------------------------------------------------------------------------------
@@ -242,14 +240,14 @@ class PlayState extends FlxState
 						ratio.text = "Perfect";
 						score += 500;
 						arrow.remove(arrow.members[i], true);
-						combo += 1;
+						comboCount();
 					}
 					else
 					{
 						ratio.text = "Good";
 						score += 200;
 						arrow.remove(arrow.members[i], true);
-						combo += 1;
+						comboCount();
 					}
 				}
 				else
@@ -257,24 +255,24 @@ class PlayState extends FlxState
 					ratio.text = "Bad";
 					score += 100;
 					arrow.remove(arrow.members[i], true);
-					combo += 1;
+					comboCount();
 				}
 			}
-			if (FlxG.overlap(arrow.members[i], downBar3) && FlxG.keys.justPressed.DOWN)
+			if (FlxG.overlap(arrow.members[i], downBar3) && FlxG.keys.justPressed.DOWN && !FlxG.overlap(arrow.members[i], downBar1))
 			{
 				if (FlxG.overlap(arrow.members[i], downBar2) && FlxG.keys.justPressed.DOWN)
 				{
 					ratio.text = "Good";
 					score += 200;
 					arrow.remove(arrow.members[i], true);
-					combo += 1;
+					comboCount();
 				}
 				else
 				{
 					ratio.text = "Bad";
 					score += 100;
 					arrow.remove(arrow.members[i], true);
-					combo += 1;
+					comboCount();
 				}
 			}
 			//UP-------------------------------------------------------------------------------------------
@@ -287,14 +285,14 @@ class PlayState extends FlxState
 						ratio.text = "Perfect";
 						score += 500;
 						arrow.remove(arrow.members[i], true);
-						combo += 1;
+						comboCount();
 					}
 					else
 					{
 						ratio.text = "Good";
 						score += 200;
 						arrow.remove(arrow.members[i], true);
-						combo += 1;
+						comboCount();
 					}
 				}
 				else
@@ -302,24 +300,24 @@ class PlayState extends FlxState
 					ratio.text = "Bad";
 					score += 100;
 					arrow.remove(arrow.members[i], true);
-					combo += 1;
+					comboCount();
 				}
 			}
-			if (FlxG.overlap(arrow.members[i], upBar3) && FlxG.keys.justPressed.UP)
+			if (FlxG.overlap(arrow.members[i], upBar3) && FlxG.keys.justPressed.UP && !FlxG.overlap(arrow.members[i], upBar1))
 			{
 				if (FlxG.overlap(arrow.members[i], upBar2) && FlxG.keys.justPressed.UP)
 				{
 					ratio.text = "Good";
 					score += 200;
 					arrow.remove(arrow.members[i], true);
-					combo += 1;
+					comboCount();
 				}
 				else
 				{
 					ratio.text = "Bad";
 					score += 100;
 					arrow.remove(arrow.members[i], true);
-					combo += 1;
+					comboCount();
 				}
 			}
 			//RIGHT----------------------------------------------------------------------------------------
@@ -332,14 +330,14 @@ class PlayState extends FlxState
 						ratio.text = "Perfect";
 						score += 500;
 						arrow.remove(arrow.members[i], true);
-						combo += 1;
+						comboCount();
 					}
 					else
 					{
 						ratio.text = "Good";
 						score += 200;
 						arrow.remove(arrow.members[i], true);
-						combo += 1;
+						comboCount();
 					}
 				}
 				else
@@ -347,24 +345,24 @@ class PlayState extends FlxState
 					ratio.text = "Bad";
 					score += 100;
 					arrow.remove(arrow.members[i], true);
-					combo += 1;
+					comboCount();
 				}
 			}
-			if (FlxG.overlap(arrow.members[i], rightBar3) && FlxG.keys.justPressed.RIGHT)
+			if (FlxG.overlap(arrow.members[i], rightBar3) && FlxG.keys.justPressed.RIGHT && !FlxG.overlap(arrow.members[i], rightBar1))
 			{
 				if (FlxG.overlap(arrow.members[i], rightBar2) && FlxG.keys.justPressed.RIGHT)
 				{
 					ratio.text = "Good";
 					score += 200;
 					arrow.remove(arrow.members[i], true);
-					combo += 1;
+					comboCount();
 				}
 				else
 				{
 					ratio.text = "Bad";
 					score += 100;
 					arrow.remove(arrow.members[i], true);
-					combo += 1;
+					comboCount();
 				}
 			}
 			//MISS-----------------------------------------------------------------------------------------
@@ -387,5 +385,9 @@ class PlayState extends FlxState
 			add(arrow);
 			timeTimed = 0;
 		}
+	}
+	private function comboCount()
+	{
+		combo++;
 	}
 }

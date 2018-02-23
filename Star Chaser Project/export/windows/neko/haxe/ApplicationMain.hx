@@ -515,7 +515,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "97",
+			build: "126",
 			company: "Leo Perugini",
 			file: "StarChaserProject",
 			fps: 60,
